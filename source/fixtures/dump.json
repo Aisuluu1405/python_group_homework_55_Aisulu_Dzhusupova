@@ -1,0 +1,115 @@
+[
+{
+  "model": "webapp.article",
+  "pk": 1,
+  "fields": {
+    "title": "Turkey-Syria offensive: US sanctions Turkish ministries",
+    "text": "The US has sanctioned two Turkish ministries and three senior government officials in response to the country's military offensive in northern Syria.\r\n\r\nPresident Donald Trump also phoned his Turkish counterpart Recep Tayyip Erdogan to demand an immediate truce, Vice-President Mike Pence said.\r\n\r\nMr Pence said he would travel to the region \"as quickly as possible\".\r\n\r\nSyria's army earlier entered areas in the north-east. This could result in a confrontation with Turkish-led forces.",
+    "author": "Unknown",
+    "created_at": "2019-10-15T07:17:05.975Z",
+    "updated_at": "2019-10-15T07:18:07.898Z",
+    "category": 1
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 2,
+  "fields": {
+    "title": "Brexit deal 'still possible, but more difficult' - Barnier",
+    "text": "The EU's chief negotiator has said a Brexit deal could still be struck this week despite it becoming \"more difficult\" to reach an agreement.\r\n\r\nMichel Barnier said it was \"time to turn good intentions into legal text\". He has previously said \"big gaps\" remained between the UK and EU.\r\n\r\nHe will update EU ministers on Brexit talks at a meeting in Luxembourg later.\r\n\r\nDiscussions between EU and UK officials aimed at reaching a Brexit deal have intensified in recent days.\r\n\r\nHopes of a deal being agreed before the 31 October Brexit deadline were boosted after a meeting between Boris Johnson and his Irish counterpart last week.\r\n\r\nSpeaking in Luxembourg on Tuesday morning, Mr Barnier said: \"An agreement will be more and more difficult but it is still possible this week.\"\r\n\r\n\"Reaching an agreement is still possible but obviously any agreement must work for everyone - for all of the UK and the whole of the EU,\" he added. \"It is high time to turn good intentions into legal text.\"",
+    "author": "Tom Hanks",
+    "created_at": "2019-10-15T07:19:41.234Z",
+    "updated_at": "2019-10-15T07:19:41.234Z",
+    "category": 1
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 3,
+  "fields": {
+    "title": "Typhoon Hagibis: Satellites show Japan rivers in flood",
+    "text": "The biggest typhoon to hit Japan in decades has left a trail of destruction in its wake. More than 40 people died as a result of Typhoon Hagibis and hundreds have been rescued after being stranded by flooded rivers and landslides.\r\n\r\nSatellite images show how the river Naka in Hinuma burst its banks, flooding nearby homes.",
+    "author": "Akinava To",
+    "created_at": "2019-10-15T07:21:02.890Z",
+    "updated_at": "2019-10-15T07:21:02.890Z",
+    "category": 1
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 4,
+  "fields": {
+    "title": "Facebook puts on brave face with Libra",
+    "text": "After five major payments providers pulled out last week, Facebook\u2019s Libra currency project looked to be on the rocks.\r\n\r\nBut the remaining members have insisted it\u2019s full steam ahead.\r\n\r\nThe 21 founding companies in the Libra Association - down from 28 when the project was first announced - met for the first time in Geneva on Monday.\r\n\r\nA spokesman told the BBC he believed the currency was still on track to launch next year.\r\n\r\nBut, he added, it would only do so if suitable regulatory approval had been granted.\r\n\r\nIt comes after a stern warning from the G7 group of nations that Libra risked disrupting the global financial order.\r\n\r\nThat concern followed a letter to payments providers from US senators Brian Schatz and Sherrod Brown, sent on 8 October, that threatened \u201ca high level of scrutiny from regulators not only on Libra-related payment activities, but on all payment activities\u201d.\r\n\r\nLibra Association spokesman Dante Disparte criticised the senators, telling the BBC the letter \u201cstifles private market innovation\u201d.\r\n\r\n\u201cAt some level it confounds the regulatory process and the law-making process of free market economies,\u201d Mr Disparte said in a phone call on Monday.\r\n\r\nThe interference created a \u201cproblematic precedent for the state of private sector innovation\u201d, he added.",
+    "author": "Dave Lee",
+    "created_at": "2019-10-15T07:22:04.756Z",
+    "updated_at": "2019-10-15T07:22:04.756Z",
+    "category": 2
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 5,
+  "fields": {
+    "title": "Barack Obama on travels.",
+    "text": "The former US president describes his most memorable travel experience, finding his place in the world on an overnight bus trip and the importance of listening.\r\nThis month at the World Travel & Tourism Council global summit in Seville, Spain, BBC Travel was fortunate enough to attend a Q&A with former US president Barack Obama. In his wide-ranging remarks, the author and Nobel Peace Prize recipient talked to Hilton CEO Chris Nassetta about how travelling helps each of us discover our place in the world and the importance of celebrating each culture\u2019s rich differences.\r\n\r\nObama\u2019s remarks were an eloquent reminder that travel forges connections, inspires transformation and builds empathy.",
+    "author": "Barack Obama",
+    "created_at": "2019-10-15T07:24:45.443Z",
+    "updated_at": "2019-10-15T07:24:45.443Z",
+    "category": 5
+  }
+},
+{
+  "model": "webapp.category",
+  "pk": 1,
+  "fields": {
+    "name": "Politic"
+  }
+},
+{
+  "model": "webapp.category",
+  "pk": 2,
+  "fields": {
+    "name": "Economic"
+  }
+},
+{
+  "model": "webapp.category",
+  "pk": 3,
+  "fields": {
+    "name": "Sport"
+  }
+},
+{
+  "model": "webapp.category",
+  "pk": 4,
+  "fields": {
+    "name": "Education"
+  }
+},
+{
+  "model": "webapp.category",
+  "pk": 5,
+  "fields": {
+    "name": "Travel"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$58vR3nllHzq6$uawiUsXkrhsrGWQL7Ao8zcde+wa3RRCeuoNY+evGBIM=",
+    "last_login": "2019-10-15T07:16:22.873Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2019-10-15T07:02:32.613Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
