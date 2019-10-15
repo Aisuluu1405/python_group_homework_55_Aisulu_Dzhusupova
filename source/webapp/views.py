@@ -43,6 +43,7 @@ class ArticleCreateView(View):
         else:
             return render(request, 'article/create.html', context={'form': form})
 
+
 class ArticleEditView(View):
     def get(self, request, *args, **kwargs):
         article_pk= kwargs.get('pk')
@@ -66,3 +67,15 @@ class ArticleEditView(View):
             return redirect('article_view', pk=article.pk)
         else:
             return render(request, 'article/update.html', context={'form': form, 'article': article})
+
+
+class ArticleDeleteView(View):
+    def get(self, request, *args, **kwargs):
+        article_pk = kwargs.get('pk')
+        article = get_object_or_404(Article, pk=article_pk)
+        return render(request, 'article/delete.html', context={'article': article})
+    def post(self, *args, **kwargs):
+        article_pk = kwargs.get('pk')
+        article = get_object_or_404(Article, pk=article_pk)
+        article.delete()
+        return redirect('index')

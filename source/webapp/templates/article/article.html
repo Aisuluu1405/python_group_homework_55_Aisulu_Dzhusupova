@@ -1,15 +1,15 @@
 {% extends 'base.html' %}
 {% block title %}{{ article.title }}{% endblock %}
 
-{% block menu %}
-{#    <li><a href="{% url 'article_update' article.pk %}">Edit</a> </li>#}
-{#    <li><a href="{% url 'article_delete' article.pk %}">Delete</a> </li>#}
-{% endblock %}
-
 {% block content %}
     <div class="container">
         <h1>{{ article.title }}</h1>
         <p>Created by: {{article.author}} at {{article.created_at}}</p>
         <div class="pre">{{ article.text }}</div>
     </div>
+    <p>
+        <a href="{% url 'article_update' article.pk %}">Edit</a>
+        <a href="{% url 'article_delete' article.pk %}">Delete</a>
+    </p>
+
 {% endblock %}
