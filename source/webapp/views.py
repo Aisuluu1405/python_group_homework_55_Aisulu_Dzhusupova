@@ -1,3 +1,13 @@
 from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
+from django.views.generic import TemplateView
+from webapp.models import Article
 
-# Create your views here.
+
+class ArticleIndexView(TemplateView):
+    template_name = 'article/index.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['articles'] = Article.objects.all()
+        return context
