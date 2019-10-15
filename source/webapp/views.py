@@ -42,3 +42,27 @@ class ArticleCreateView(View):
             return redirect('article_view', pk=article.pk)
         else:
             return render(request, 'article/create.html', context={'form': form})
+
+class ArticleEditView(View):
+    def get(self, request, *args, **kwargs):
+        article_pk= kwargs.get('pk')
+        article = get_object_or_404(Article, pk=article_pk)
+        form = ArticleForm(data={
+            'title': article.title,
+            'author': article.author,
+            'text': article.text,
+            })
+        return render(request, 'article/update.html', context={'form': form, 'article': article})
+    def post(self, request, *args, **kwargs):
+        article_pk = kwargs.get('pk')
+        article = get_object_or_404(Article, pk=article_pk)
+        form = ArticleForm(data=request.POST)
+        if form.is_valid():
+            data = form.cleaned_data
+            article.title = data['title']
+            article.author = data['author']
+            article.text = data['text']
+            article.save()
+            return redirect('article_view', pk=article.pk)
+        else:
+            return render(request, 'article/update.html', context={'form': form, 'article': article})
