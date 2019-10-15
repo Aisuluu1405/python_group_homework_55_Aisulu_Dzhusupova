@@ -128,3 +128,16 @@ class CommentEditView(View):
             return redirect('comment_index')
         else:
             return render(request, 'comments/update.html', context={'form': form, 'comment': comment})
+
+
+class CommentDeleteView(View):
+    def get(self, request, *args, **kwargs):
+        comment_pk = kwargs.get('pk')
+        comment = get_object_or_404(Comment, pk=comment_pk)
+        return render(request, 'comments/delete.html', context={'comment': comment})
+
+    def post(self, request, *args, **kwargs):
+        comment_pk = kwargs.get('pk')
+        comment = get_object_or_404(Comment, pk=comment_pk)
+        comment.delete()
+        return redirect('comment_index')
