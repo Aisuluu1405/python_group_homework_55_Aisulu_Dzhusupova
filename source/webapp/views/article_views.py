@@ -1,10 +1,11 @@
 from django.core.paginator import Paginator
-from django.shortcuts import render, get_object_or_404, redirect
+from django.db.models import Q
 from django.urls import reverse, reverse_lazy
+from django.utils.http import urlencode
 from django.views import View
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
-from webapp.forms import ArticleForm, ArticleCommentForm
+from webapp.forms import ArticleForm, ArticleCommentForm, SimpleSearchForm
 from webapp.models import Article
 
 
@@ -15,6 +16,35 @@ class ArticleIndexView(ListView):
     ordering = ['-created_at']
     paginate_by = 4
     paginate_orphans = 1
+
+    def get(self, request, *args, **kwargs):
+        self.form = self.get_search_form()
+        self.search_query = self.get_search_query()
+        return super().get(request, *args, **kwargs)
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(object_list=object_list, **kwargs)
+        if self.search_query:
+            context['query'] = urlencode({'search': self.search_query})
+        context['form'] = self.form
+        return context
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        if self.search_query:
+            queryset = queryset.filter(
+                Q(title__icontains=self.search_query)
+                | Q(author__icontains=self.search_query)
+            )
+        return queryset
+
+    def get_search_form(self):
+        return SimpleSearchForm(self.request.GET)
+
+    def get_search_query(self):
+        if self.form.is_valid():
+            return self.form.cleaned_data['search']
+        return None
 
 
 class ArticleView(DetailView):
