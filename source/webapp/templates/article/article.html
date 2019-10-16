@@ -2,14 +2,42 @@
 {% block title %}{{ article.title }}{% endblock %}
 
 {% block content %}
-    <div class="container">
-        <h1>{{ article.title }}</h1>
-        <p>Created by: {{article.author}} at {{article.created_at}}</p>
-        <div class="pre">{{ article.text }}</div>
+    <div class="card m-5">
+  <h5 class="card-header pt-4 font-weight-bold">{{ article.title }}</h5>
+  <div class="card-body">
+      <p class="card-text pre">{{ article.text }}</p>
+      <p>
+        <a href="{% url 'article_update' article.pk %}" class="btn btn-outline-dark">Edit</a>
+        <a href="{% url 'article_delete' article.pk %}" class="btn btn-outline-dark ml-5">Delete</a>
+          <a href="#add_comment" class="btn btn-outline-dark ml-4">Add comment</a>
+      </p>
+  </div>
+</div>
+
+    <hr>
+    <h3><b>Comments for this article:</b></h3>
+    {% if is_paginated %}
+        {% include 'partial/pagination.html' %}
+    {% endif %}
+    <div class="comment-list">
+        {% for comment in comments %}
+            <div class="comment">
+                <p>{{ comment.author }} commented at {{ comment.created_at|date:'d.m.Y H:i:s' }}</p>
+                <div class="pre">{{ comment.text }}</div>
+                <p class="comment-links">
+                    <a href="{% url 'comment_update' comment.pk %}">Edit</a>
+                    <a href="{% url 'comment_delete' comment.pk %}">Delete</a>
+                </p>
+            </div>
+        {% empty %}
+            <p>No comments yet.</p>
+        {% endfor %}
     </div>
-    <p>
-        <a href="{% url 'article_update' article.pk %}">Edit</a>
-        <a href="{% url 'article_delete' article.pk %}">Delete</a>
-    </p>
+     {% if is_paginated %}
+        {% include 'partial/pagination.html' %}
+    {% endif %}
+    <form action="{% url 'article_comment_add' article.pk %}" method="POST" id="add_comment">
+        {% include 'partial/form.html' with button_text='Add' %}
+    </form>
 
 {% endblock %}

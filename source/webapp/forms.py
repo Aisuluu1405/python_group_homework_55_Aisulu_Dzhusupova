@@ -15,3 +15,9 @@ class CommentForm(forms.Form):
     article = forms.ModelChoiceField(queryset=Article.objects.all(), required=False, label='Article')
     text = forms.CharField(max_length=400, required=True, label='Text', widget=widgets.Textarea)
     author = forms.CharField(max_length=40, required=False, label='Author')
+
+
+class ArticleCommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ['author', 'text']
