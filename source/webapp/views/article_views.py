@@ -60,5 +60,5 @@ class ArticleEditView(UpdateView):
 class ArticleDeleteView(DeleteView):
     template_name = 'article/delete.html'
     model = Article
-    context_key = 'article'
-    redirect_url = reverse_lazy('index')
+    context_object_name = 'article'
+    success_url = reverse_lazy('index')

@@ -30,14 +30,6 @@ h2{
     margin-left: 35%;
     font-size: 25px;
 }
-.math_form{
-    padding-top: 50px;
-    margin: 30px 20px;
-    display: flex;
-    font-weight: bold;
-    font-size: 30px;
-}
-
 .comment-add label{
     width: 120px;
     height: 30px;
@@ -47,12 +39,10 @@ h2{
     margin-bottom: 30px;
     font-size: 18px;
 }
-
 .comment-add input {
     font-size: 20px;
     width: 500px;
 }
-
 .submit p{
     border-radius: 3px;
     font-size: 15px;

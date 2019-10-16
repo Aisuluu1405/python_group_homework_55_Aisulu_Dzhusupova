@@ -4,7 +4,7 @@
 
 {% block content %}
     <h1>Update Comment</h1>
-    <form method="POST" action="{% url 'comment_update' comment.pk %}">
+    <form method="POST" action="">
         {% include 'partial/article_form.html' with button_text='Update'%}
     </form>
 {% endblock %}
