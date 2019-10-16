@@ -67,9 +67,6 @@ textarea{
 .delete-info h1{
     margin-left: 10%;
 }
-/*.pagination {*/
-   /*text-align: center;*/
-/*}*/
 .pagination a, .pagination .page-disabled {
    display: inline-block;
    border: solid 1px #6a7ddd;
