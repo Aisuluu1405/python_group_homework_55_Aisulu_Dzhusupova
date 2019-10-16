@@ -36,8 +36,8 @@
      {% if is_paginated %}
         {% include 'partial/pagination.html' %}
     {% endif %}
-    <form action="{% url 'article_comment_add' article.pk %}" method="POST" id="add_comment">
-        {% include 'partial/form.html' with button_text='Add' %}
-    </form>
+{#    <form action="{% url 'article_comment_add' article.pk %}" method="POST" id="add_comment">#}
+{#        {% include 'partial/form.html' with button_text='Add' %}#}
+{#    </form>#}
 
 {% endblock %}
