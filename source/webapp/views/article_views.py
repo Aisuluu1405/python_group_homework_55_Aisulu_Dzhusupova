@@ -1,12 +1,14 @@
 from django.core.paginator import Paginator
 from django.db.models import Q
+from django.http import request
+from django.shortcuts import redirect, render
 from django.urls import reverse, reverse_lazy
 from django.utils.http import urlencode
 from django.views import View
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
 from webapp.forms import ArticleForm, ArticleCommentForm, SimpleSearchForm
-from webapp.models import Article
+from webapp.models import Article, Tag
 
 
 class ArticleIndexView(ListView):
@@ -74,6 +76,21 @@ class ArticleCreateView(CreateView):
     template_name = 'article/create.html'
     form_class = ArticleForm
 
+    # def get_tag(self, request, *args, **kwargs):
+    #     tags = self.request.POST.get('tags').split(',')
+    #     return render(request, self.template_name, context={'tags': tags})
+    #
+    # def tag_post(self, request, *args, **kwargs):
+    #     tag = Tag.objects.get_or_create(name=request.POST['name'].exists())
+    #     tag.save()
+    #     return redirect('index')
+    #
+    # def form_valid(self, form):
+    #     article = Article.objects.create(**form.cleaned_data)
+    #     tag_post()
+    #     return redirect('article_view', kwargs={'pk':self.object.pk})
+    #
+
     def get_success_url(self):
         return reverse('article_view', kwargs={'pk': self.object.pk})
 
@@ -92,3 +109,4 @@ class ArticleDeleteView(DeleteView):
     model = Article
     context_object_name = 'article'
     success_url = reverse_lazy('index')
+

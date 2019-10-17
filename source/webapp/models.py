@@ -9,6 +9,7 @@ class Article(models.Model):
     updated_at = models.DateTimeField(auto_now=True, verbose_name='Change time')
     category = models.ForeignKey('Category', on_delete=models.PROTECT, null=True, blank=True, verbose_name='Category',
                                  related_name='articles')
+    tags = models.ManyToManyField('webapp.Tag', related_name='articles', blank=True, verbose_name='Tags')
 
     def __str__(self):
         return self.title
@@ -32,3 +33,10 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+
+class Tag(models.Model):
+    name = models.CharField(max_length=31, verbose_name='Tag')
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='Date create')
+
+    def __str__(self):
+        return self.name
