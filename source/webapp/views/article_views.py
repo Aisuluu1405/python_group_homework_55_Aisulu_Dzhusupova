@@ -1,7 +1,7 @@
 from django.core.paginator import Paginator
 from django.db.models import Q
-from django.http import request
-from django.shortcuts import redirect, render
+# from django.http import request
+from django.shortcuts import redirect, render, get_object_or_404
 from django.urls import reverse, reverse_lazy
 from django.utils.http import urlencode
 from django.views import View
@@ -29,14 +29,16 @@ class ArticleIndexView(ListView):
         if self.search_query:
             context['query'] = urlencode({'search': self.search_query})
         context['form'] = self.form
+        tag_filter = self.request.GET
+        if 'tag' in tag_filter:
+            context['articles'] = Article.objects.filter(tags__name=tag_filter.get('tag'))
         return context
 
     def get_queryset(self):
         queryset = super().get_queryset()
         if self.search_query:
             queryset = queryset.filter(
-                Q(title__icontains=self.search_query)
-                | Q(author__icontains=self.search_query)
+                Q(tags__name__iexact=self.search_query)
             )
         return queryset
 
@@ -76,20 +78,16 @@ class ArticleCreateView(CreateView):
     template_name = 'article/create.html'
     form_class = ArticleForm
 
-    # def get_tag(self, request, *args, **kwargs):
-    #     tags = self.request.POST.get('tags').split(',')
-    #     return render(request, self.template_name, context={'tags': tags})
-    #
-    # def tag_post(self, request, *args, **kwargs):
-    #     tag = Tag.objects.get_or_create(name=request.POST['name'].exists())
-    #     tag.save()
-    #     return redirect('index')
-    #
-    # def form_valid(self, form):
-    #     article = Article.objects.create(**form.cleaned_data)
-    #     tag_post()
-    #     return redirect('article_view', kwargs={'pk':self.object.pk})
-    #
+    def form_valid(self, form):
+        self.object = form.save()
+        self.create_tag()
+        return redirect(self.get_success_url())
+
+    def create_tag(self):
+        tags = self.request.POST.get('tags').split(',')
+        for tag in tags:
+            tag, _ = Tag.objects.get_or_create(name=tag.strip())
+            self.object.tags.add(tag)
 
     def get_success_url(self):
         return reverse('article_view', kwargs={'pk': self.object.pk})
@@ -100,6 +98,32 @@ class ArticleEditView(UpdateView):
     template_name = 'article/update.html'
     form_class = ArticleForm
     context_object_name = 'article'
+
+    def get(self, request, *args, **kwargs):
+        article = get_object_or_404(Article, pk=self.kwargs['pk'])
+        form = self.form_class(instance=article)
+        tags = article.tags.all().values('name')
+        str_tag = ''
+        for tag in tags:
+            str_tag += tag['name'] + ', '
+        form.fields['tags'].initial = str_tag.strip(', ')
+        return render(request, self.template_name, context={'form': form, 'article': article})
+
+    def form_valid(self, form):
+        article = get_object_or_404(Article, pk=self.kwargs['pk'])
+        article.tags.clear()
+        self.object = form.save()
+        self.create_tag()
+
+        return redirect(self.get_success_url())
+
+    def create_tag(self):
+        tags = self.request.POST.get('tags').split(',')
+        for tag in tags:
+            tag, _ = Tag.objects.get_or_create(name=tag.strip())
+            self.object.tags.add(tag)
+
+
     def get_success_url(self):
         return reverse('article_view', kwargs={'pk': self.object.pk})
 
