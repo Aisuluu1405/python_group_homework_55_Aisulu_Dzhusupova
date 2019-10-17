@@ -5,10 +5,15 @@
   "fields": {
     "title": "Turkey-Syria offensive: US sanctions Turkish ministries",
     "text": "The US has sanctioned two Turkish ministries and three senior government officials in response to the country's military offensive in northern Syria.\r\n\r\nPresident Donald Trump also phoned his Turkish counterpart Recep Tayyip Erdogan to demand an immediate truce, Vice-President Mike Pence said.\r\n\r\nMr Pence said he would travel to the region \"as quickly as possible\".\r\n\r\nSyria's army earlier entered areas in the north-east. This could result in a confrontation with Turkish-led forces.",
-    "author": "Unknown",
+    "author": "Gordon11222",
     "created_at": "2019-10-15T07:17:05.975Z",
-    "updated_at": "2019-10-15T07:18:07.898Z",
-    "category": 1
+    "updated_at": "2019-10-17T13:26:04.938Z",
+    "category": 1,
+    "tags": [
+      3,
+      36,
+      37
+    ]
   }
 },
 {
@@ -19,8 +24,11 @@
     "text": "The EU's chief negotiator has said a Brexit deal could still be struck this week despite it becoming \"more difficult\" to reach an agreement.\r\n\r\nMichel Barnier said it was \"time to turn good intentions into legal text\". He has previously said \"big gaps\" remained between the UK and EU.\r\n\r\nHe will update EU ministers on Brexit talks at a meeting in Luxembourg later.\r\n\r\nDiscussions between EU and UK officials aimed at reaching a Brexit deal have intensified in recent days.\r\n\r\nHopes of a deal being agreed before the 31 October Brexit deadline were boosted after a meeting between Boris Johnson and his Irish counterpart last week.\r\n\r\nSpeaking in Luxembourg on Tuesday morning, Mr Barnier said: \"An agreement will be more and more difficult but it is still possible this week.\"\r\n\r\n\"Reaching an agreement is still possible but obviously any agreement must work for everyone - for all of the UK and the whole of the EU,\" he added. \"It is high time to turn good intentions into legal text.\"",
     "author": "Tom Hanks",
     "created_at": "2019-10-15T07:19:41.234Z",
-    "updated_at": "2019-10-15T07:19:41.234Z",
-    "category": 1
+    "updated_at": "2019-10-17T13:25:26.294Z",
+    "category": 1,
+    "tags": [
+      35
+    ]
   }
 },
 {
@@ -31,8 +39,11 @@
     "text": "The biggest typhoon to hit Japan in decades has left a trail of destruction in its wake. More than 40 people died as a result of Typhoon Hagibis and hundreds have been rescued after being stranded by flooded rivers and landslides.\r\n\r\nSatellite images show how the river Naka in Hinuma burst its banks, flooding nearby homes.",
     "author": "Akinava To",
     "created_at": "2019-10-15T07:21:02.890Z",
-    "updated_at": "2019-10-15T07:21:02.890Z",
-    "category": 1
+    "updated_at": "2019-10-17T12:56:56.621Z",
+    "category": 1,
+    "tags": [
+      28
+    ]
   }
 },
 {
@@ -43,8 +54,11 @@
     "text": "After five major payments providers pulled out last week, Facebook\u2019s Libra currency project looked to be on the rocks.\r\n\r\nBut the remaining members have insisted it\u2019s full steam ahead.\r\n\r\nThe 21 founding companies in the Libra Association - down from 28 when the project was first announced - met for the first time in Geneva on Monday.\r\n\r\nA spokesman told the BBC he believed the currency was still on track to launch next year.\r\n\r\nBut, he added, it would only do so if suitable regulatory approval had been granted.\r\n\r\nIt comes after a stern warning from the G7 group of nations that Libra risked disrupting the global financial order.\r\n\r\nThat concern followed a letter to payments providers from US senators Brian Schatz and Sherrod Brown, sent on 8 October, that threatened \u201ca high level of scrutiny from regulators not only on Libra-related payment activities, but on all payment activities\u201d.\r\n\r\nLibra Association spokesman Dante Disparte criticised the senators, telling the BBC the letter \u201cstifles private market innovation\u201d.\r\n\r\n\u201cAt some level it confounds the regulatory process and the law-making process of free market economies,\u201d Mr Disparte said in a phone call on Monday.\r\n\r\nThe interference created a \u201cproblematic precedent for the state of private sector innovation\u201d, he added.",
     "author": "Dave Lee",
     "created_at": "2019-10-15T07:22:04.756Z",
-    "updated_at": "2019-10-15T07:22:04.756Z",
-    "category": 2
+    "updated_at": "2019-10-17T13:24:42.213Z",
+    "category": 2,
+    "tags": [
+      34
+    ]
   }
 },
 {
@@ -55,8 +69,90 @@
     "text": "The former US president describes his most memorable travel experience, finding his place in the world on an overnight bus trip and the importance of listening.\r\nThis month at the World Travel & Tourism Council global summit in Seville, Spain, BBC Travel was fortunate enough to attend a Q&A with former US president Barack Obama. In his wide-ranging remarks, the author and Nobel Peace Prize recipient talked to Hilton CEO Chris Nassetta about how travelling helps each of us discover our place in the world and the importance of celebrating each culture\u2019s rich differences.\r\n\r\nObama\u2019s remarks were an eloquent reminder that travel forges connections, inspires transformation and builds empathy.",
     "author": "Barack Obama",
     "created_at": "2019-10-15T07:24:45.443Z",
-    "updated_at": "2019-10-15T07:24:45.443Z",
-    "category": 5
+    "updated_at": "2019-10-17T13:23:53.934Z",
+    "category": 5,
+    "tags": [
+      33
+    ]
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 22,
+  "fields": {
+    "title": "Education",
+    "text": "A British team is developing a car that will be capable of reaching 1,000mph (1,610km/h). Powered by a rocket bolted to a Eurofighter-Typhoon jet engine, the vehicle aims to show its potential by going progressively faster, year after year. By the end of 2019, Bloodhound wants to have demonstrated speeds above 500mph. The next step would be to break the existing world land speed record (763mph; 1,228km/h). The racing will take place on Hakskeen Pan in Northern Cape, South Africa.\r\n\r\nWe're off! By the time you read this, Bloodhound will already have started the 5,500-mile journey south to its Hakskeenpan desert track in South Africa.\r\n\r\nThe majority of the team will arrive in mid-October, aiming to start high-speed testing towards the end of the month.\r\n\r\nThere's been a huge amount of work over the past few weeks to get the car ready.",
+    "author": "Unknown",
+    "created_at": "2019-10-17T12:01:45.084Z",
+    "updated_at": "2019-10-17T13:23:11.835Z",
+    "category": 3,
+    "tags": [
+      29,
+      30,
+      31,
+      32
+    ]
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 23,
+  "fields": {
+    "title": "To the average person, Russians broadcasting about borsch may seem obvious and innocuous, but not so for Ukrainians, who consider the soup to be their national dish.",
+    "text": "Soup should never be your go-to weapon in a food fight. As projectiles go, a bowl of chunky liquid proves messy and lacks precision. Fist-size bread rolls are more effective \u2013 or, say, chocolate pudding catapulted from a spoon. In Russia though, the latest food fight is all about soup, and it\u2019s being hurled from the walls of the Kremlin via Twitter.\r\n\r\nThe soup war boiled over into social media this year, when @Russia (the official Twitter account for the Russian Federation\u2019s Ministry of Foreign Affairs) tweeted: \u201cA timeless classic, #Borsch is one of Russia\u2019s most famous & beloved #dishes & a symbol of traditional cuisine\u201d.\r\n\r\nTo the average Twitter skimmer, Russians broadcasting about borsch may seem obvious and innocuous, but for Ukrainians, who consider borsch to be their national dish, the Russian tweet is wartime propaganda, especially considering the current occupation of Crimea and the latest territorial conflict in eastern Ukraine that\u2019s been raging since 2014. The Ukrainian Twittersphere responded with anger and humour, with comments like \u201cAs if stealing Crimea wasn\u2019t enough, you had to go and steal borsch from Ukraine as well\u201d.",
+    "author": "Andrew Evans",
+    "created_at": "2019-10-17T13:28:27.837Z",
+    "updated_at": "2019-10-17T13:28:27.837Z",
+    "category": 5,
+    "tags": [
+      38,
+      39,
+      40
+    ]
+  }
+},
+{
+  "model": "webapp.comment",
+  "pk": 1,
+  "fields": {
+    "article": 1,
+    "text": "\u0417\u0430\u0447\u0435\u043c",
+    "author": "Anonymous",
+    "created_at": "2019-10-15T08:33:16.910Z",
+    "updated_at": "2019-10-15T08:38:15.104Z"
+  }
+},
+{
+  "model": "webapp.comment",
+  "pk": 3,
+  "fields": {
+    "article": 1,
+    "text": "hgfdjkoiib 25566\r\nfdseyiknm 2662\r\ntest\r\ntest",
+    "author": "me",
+    "created_at": "2019-10-16T03:24:56.037Z",
+    "updated_at": "2019-10-16T03:24:56.037Z"
+  }
+},
+{
+  "model": "webapp.comment",
+  "pk": 4,
+  "fields": {
+    "article": 1,
+    "text": "\u043d\u0443 \u0447\u0442\u043e \u043e\u043f\u044f\u0442\u044c \u0442\u0430\u043a\u043e\u0435?",
+    "author": "My son",
+    "created_at": "2019-10-16T03:31:13.476Z",
+    "updated_at": "2019-10-16T03:31:13.476Z"
+  }
+},
+{
+  "model": "webapp.comment",
+  "pk": 5,
+  "fields": {
+    "article": 1,
+    "text": "\u0423\u0444",
+    "author": "Anonymous",
+    "created_at": "2019-10-16T03:31:22.643Z",
+    "updated_at": "2019-10-16T03:31:22.643Z"
   }
 },
 {
@@ -92,6 +188,142 @@
   "pk": 5,
   "fields": {
     "name": "Travel"
+  }
+},
+{
+  "model": "webapp.tag",
+  "pk": 1,
+  "fields": {
+    "name": "World politic",
+    "created_at": "2019-10-17T02:38:23.133Z"
+  }
+},
+{
+  "model": "webapp.tag",
+  "pk": 2,
+  "fields": {
+    "name": "World Economic",
+    "created_at": "2019-10-17T02:38:39.873Z"
+  }
+},
+{
+  "model": "webapp.tag",
+  "pk": 3,
+  "fields": {
+    "name": "Middle East",
+    "created_at": "2019-10-17T02:38:51.378Z"
+  }
+},
+{
+  "model": "webapp.tag",
+  "pk": 5,
+  "fields": {
+    "name": "name",
+    "created_at": "2019-10-17T08:27:54.795Z"
+  }
+},
+{
+  "model": "webapp.tag",
+  "pk": 28,
+  "fields": {
+    "name": "World",
+    "created_at": "2019-10-17T12:56:57.247Z"
+  }
+},
+{
+  "model": "webapp.tag",
+  "pk": 29,
+  "fields": {
+    "name": "test2",
+    "created_at": "2019-10-17T13:00:46.444Z"
+  }
+},
+{
+  "model": "webapp.tag",
+  "pk": 30,
+  "fields": {
+    "name": "book2",
+    "created_at": "2019-10-17T13:00:46.990Z"
+  }
+},
+{
+  "model": "webapp.tag",
+  "pk": 31,
+  "fields": {
+    "name": "world",
+    "created_at": "2019-10-17T13:00:47.538Z"
+  }
+},
+{
+  "model": "webapp.tag",
+  "pk": 32,
+  "fields": {
+    "name": "test",
+    "created_at": "2019-10-17T13:00:48.298Z"
+  }
+},
+{
+  "model": "webapp.tag",
+  "pk": 33,
+  "fields": {
+    "name": "World news",
+    "created_at": "2019-10-17T13:23:54.667Z"
+  }
+},
+{
+  "model": "webapp.tag",
+  "pk": 34,
+  "fields": {
+    "name": "E-money",
+    "created_at": "2019-10-17T13:24:43.099Z"
+  }
+},
+{
+  "model": "webapp.tag",
+  "pk": 35,
+  "fields": {
+    "name": "Brexit-UK",
+    "created_at": "2019-10-17T13:25:27.024Z"
+  }
+},
+{
+  "model": "webapp.tag",
+  "pk": 36,
+  "fields": {
+    "name": "War",
+    "created_at": "2019-10-17T13:26:05.985Z"
+  }
+},
+{
+  "model": "webapp.tag",
+  "pk": 37,
+  "fields": {
+    "name": "Syria",
+    "created_at": "2019-10-17T13:26:06.597Z"
+  }
+},
+{
+  "model": "webapp.tag",
+  "pk": 38,
+  "fields": {
+    "name": "Russia",
+    "created_at": "2019-10-17T13:28:28.424Z"
+  }
+},
+{
+  "model": "webapp.tag",
+  "pk": 39,
+  "fields": {
+    "name": "food",
+    "created_at": "2019-10-17T13:28:28.945Z"
+  }
+},
+{
+  "model": "webapp.tag",
+  "pk": 40,
+  "fields": {
+    "name": "national",
+    "created_at": "2019-10-17T13:28:29.425Z"
   }
 },
 {
