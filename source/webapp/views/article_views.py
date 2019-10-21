@@ -51,6 +51,52 @@ class ArticleIndexView(ListView):
         return None
 
 
+class ArticleSearchView(FormView):
+    template_name = 'article/search.html'
+    form_class = FullSearchForm
+
+    def form_valid(self, form):
+        text = form.cleaned_data.get('text')
+        author = form.cleaned_data.get('author')
+        query = Q()
+        if text or author:
+            query = self.get_text_query(form, text) | self.get_author_query(form, author)
+
+        articles = Article.objects.filter(query).distinct()
+        context = self.get_context_data()
+        context['articles'] = articles
+
+        return self.render_to_response(context)
+
+    def get_text_query(self, form, text):
+        query = Q()
+        in_title = form.cleaned_data.get('in_title')
+        if in_title:
+            query = query | Q(title__icontains=text)
+        in_text = form.cleaned_data.get('in_text')
+        if in_text:
+            query = query | Q(text__icontains=text)
+        in_tags = form.cleaned_data.get('in_tags')
+        if in_tags:
+            query = query | Q(tags__name__iexact=text)
+        in_comment_text = form.cleaned_data.get('in_comment_text')
+        if in_comment_text:
+            query = query | Q(comments__text__icontains=text)
+        return query
+
+
+    def get_author_query(self, form, author):
+        query = Q()
+        article_author = form.cleaned_data.get('article_author')
+        if article_author:
+            query = query | Q(author__iexact=author)
+        comment_author = form.cleaned_data.get('comment_author')
+        if comment_author:
+            query = query | Q(comments__author__iexact=author)
+        return query
+
+
+
 
 
 class ArticleView(DetailView):
