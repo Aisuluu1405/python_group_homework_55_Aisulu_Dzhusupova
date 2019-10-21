@@ -45,3 +45,27 @@ class FullSearchForm(forms.Form):
     article_author = forms.BooleanField(initial=True, required=False, label='Articles')
     comment_author = forms.BooleanField(initial=False, required=False, label='Comments')
 
+    def clean(self):
+        super().clean()
+        data = self.cleaned_data
+        if not data.get('text') and not data.get('author'):
+            raise ValidationError(
+                '*Field "text" or "author" should not be empty!',
+                code='text_author_search_criteria_empty'
+            )
+        if data.get('text'):
+            if not (data.get('in_title') or data.get('in_text')
+                    or data.get('in_tags') or data.get('in_comment_text')):
+                raise ValidationError(
+                    '*One of the following checkboxes should be checked: In title, In text, In tags, In comment text!',
+                    code='text_search_criteria_empty'
+                )
+        if data.get('author'):
+            if not (data.get('article_author') or data.get('comment_author')):
+                raise ValidationError(
+                    '*One of the following checkboxes should be checked: Article_author, Comment_author!',
+                    code='author_search_criteria_empty'
+                )
+        return data
+
+
