@@ -33,16 +33,15 @@ class ArticleCommentForm(forms.ModelForm):
 class SimpleSearchForm(forms.Form):
     search = forms.CharField(max_length=100, required=False, label="Search")
 
+
 class FullSearchForm(forms.Form):
     text = forms.CharField(max_length=100, required=False, label="To the text")
-
     in_title = forms.BooleanField(initial=True, required=False, label='In the title')
     in_text = forms.BooleanField(initial=True, required=False, label='In the text')
     in_tags = forms.BooleanField(initial=True, required=False, label='In the tags')
     in_comment_text = forms.BooleanField(initial=False, required=False, label='In the comments')
 
     author = forms.CharField(max_length=100, required=False, label="By author")
-
     article_author = forms.BooleanField(initial=True, required=False, label='Articles')
     comment_author = forms.BooleanField(initial=False, required=False, label='Comments')
 

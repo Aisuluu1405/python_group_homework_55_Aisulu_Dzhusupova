@@ -5,9 +5,9 @@ from django.shortcuts import redirect, render, get_object_or_404
 from django.urls import reverse, reverse_lazy
 from django.utils.http import urlencode
 from django.views import View
-from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView, FormView
 
-from webapp.forms import ArticleForm, ArticleCommentForm, SimpleSearchForm
+from webapp.forms import ArticleForm, ArticleCommentForm, SimpleSearchForm, FullSearchForm
 from webapp.models import Article, Tag
 
 
@@ -51,6 +51,8 @@ class ArticleIndexView(ListView):
         return None
 
 
+
+
 class ArticleView(DetailView):
     template_name = 'article/article.html'
     model = Article
@@ -71,6 +73,7 @@ class ArticleView(DetailView):
         context['page_obj'] = page
         context['comments'] = page.object_list
         context['is_paginated'] = page.has_other_pages()
+
 
 
 class ArticleCreateView(CreateView):

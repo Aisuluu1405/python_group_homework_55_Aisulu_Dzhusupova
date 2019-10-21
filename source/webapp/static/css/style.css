@@ -80,3 +80,18 @@ textarea{
     margin-left: 33%;
     margin-top: 40px;
 }
+.form-error {
+    color: red;
+    font-size: 20px;
+    margin: 30px 0 25px 0;
+
+}
+
+.field-error {
+    border: solid 1px red;
+    box-shadow: red 0 0 3px;
+}
+.label{
+    font-size: 20px;
+    width: 200px;
+}
