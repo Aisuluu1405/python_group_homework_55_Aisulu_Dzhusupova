@@ -34,11 +34,11 @@
       </li>
            {% block menu %} {% endblock %}
             {% if request.user.is_authenticated %}
-                <li>Hello, {{ request.user }}</li>
-                <li><a href="{% url 'accounts:logout'  %}">Log Out</a></li>
+                <li class="nav-item">Hello, {{ request.user }}</li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'accounts:logout'  %}">Log Out</a></li>
             {% else %}
-                <li><a href="{% url 'accounts:login'  %}">Log In</a></li>
-                <li><a href="{% url 'accounts:register' %}"> Register</a> </li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'accounts:login'  %}">Log In</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'accounts:register' %}"> Register</a> </li>
             {% endif %}
        </ul>
    </div>
