@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block menu %}
      <li class="nav-item">
-        <a class="nav-link" href="{% url 'comment_add' %}">Add Comment</a>
+        <a class="nav-link" href="{% url 'webapp:comment_add' %}">Add Comment</a>
       </li>
 
  {% endblock %}
@@ -14,9 +14,9 @@
         <div>{{ comment.author }}</div>
         <div>{{ comment.created_at }}</div>
 
-        <p><a href="{%  url 'article_view' comment.article.pk %}">{{ comment.article.title }}</a></a> </p>
-        <p><a href="{% url 'comment_update' comment.pk %}">Edit</a> </p>
-        <p><a href="{% url 'comment_delete' comment.pk%}">Delete</a> </p>
+        <p><a href="{%  url 'webapp:article_view' comment.article.pk %}">{{ comment.article.title }}</a></a> </p>
+        <p><a href="{% url 'webapp:comment_update' comment.pk %}">Edit</a> </p>
+        <p><a href="{% url 'webapp:comment_delete' comment.pk%}">Delete</a> </p>
 {#        <p><a href="{% url 'comment_add' %}">Add comment</a></p>#}
         <hr/>
     {% endfor %}

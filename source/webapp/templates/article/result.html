@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}{{ article.title }}{% endblock %}
+
+{% block content %}
+
+    {% if is_paginated %}
+        {% include 'partial/pagination.html' %}
+    {% endif %}
+    <h1>Result</h1>
+
+    {%  for query in articles %}
+    <div class="card m-5">
+        <h5 class="card-header pt-5 font-weight-bold">{{ query.title }}</h5>
+        <div class="card-body">
+            <p class="card-text pre">{{ query.text }}</p>
+        </div>
+    </div>
+    {% endfor %}
+    {% if is_paginated %}
+        {% include 'partial/pagination.html' %}
+    {% endif %}
+
+{% endblock %}

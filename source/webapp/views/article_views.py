@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.paginator import Paginator
 from django.db.models import Q
 # from django.http import request
@@ -68,6 +69,8 @@ class ArticleSearchView(FormView):
 
         return self.render_to_response(context)
 
+        # return render(self.request, 'article/result.html', context)
+
     def get_text_query(self, form, text):
         query = Q()
         in_title = form.cleaned_data.get('in_title')
@@ -96,6 +99,15 @@ class ArticleSearchView(FormView):
         return query
 
 
+# class ResultView(ListView):
+#     template_name = 'article/result.html'
+#     model = Article
+#     context_object_name = 'articles'
+#     paginate_by = 4
+#     paginate_orphans = 1
+
+
+
 
 
 
@@ -122,7 +134,7 @@ class ArticleView(DetailView):
 
 
 
-class ArticleCreateView(CreateView):
+class ArticleCreateView(LoginRequiredMixin, CreateView):
     model = Article
     template_name = 'article/create.html'
     form_class = ArticleForm
@@ -139,10 +151,10 @@ class ArticleCreateView(CreateView):
             self.object.tags.add(tag)
 
     def get_success_url(self):
-        return reverse('article_view', kwargs={'pk': self.object.pk})
+        return reverse('webapp:article_view', kwargs={'pk': self.object.pk})
 
 
-class ArticleEditView(UpdateView):
+class ArticleEditView(LoginRequiredMixin, UpdateView):
     model = Article
     template_name = 'article/update.html'
     form_class = ArticleForm
@@ -174,12 +186,12 @@ class ArticleEditView(UpdateView):
 
 
     def get_success_url(self):
-        return reverse('article_view', kwargs={'pk': self.object.pk})
+        return reverse('webapp:article_view', kwargs={'pk': self.object.pk})
 
 
-class ArticleDeleteView(DeleteView):
+class ArticleDeleteView(LoginRequiredMixin, DeleteView):
     template_name = 'article/delete.html'
     model = Article
     context_object_name = 'article'
-    success_url = reverse_lazy('index')
+    success_url = reverse_lazy('webapp:index')
 

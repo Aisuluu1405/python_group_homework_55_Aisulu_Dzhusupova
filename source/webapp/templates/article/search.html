@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-    <form action="{% url "article_search" %}" method="post">
+    <form action="{% url "webapp:article_search" %}" method="post">
         {% csrf_token %}
 
         {% for error in form.non_field_errors %}
@@ -18,12 +18,12 @@
         <p class="text-left"><input type="submit" value="Search" class="btn btn-outline-dark mt-5 font-weight-bolder"></p>
     </form>
 
-    <h1>Results</h1>
-    {% if is_paginated %}
-        {% include 'partial/pagination.html' %}
-    {% endif %}
-        {% include 'article/partial/article_list.html' %}
-    {% if is_paginated %}
-        {% include 'partial/pagination.html' %}
-    {% endif %}
+{#    <h1>Results</h1>#}
+{#    {% if is_paginated %}#}
+{#        {% include 'partial/pagination.html' %}#}
+{#    {% endif %}#}
+{#        {% include 'article/partial/article_list.html' %}#}
+{#    {% if is_paginated %}#}
+{#        {% include 'partial/pagination.html' %}#}
+{#    {% endif %}#}
 {% endblock %}

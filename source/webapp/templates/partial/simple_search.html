@@ -1,4 +1,4 @@
-<form class="text-center m-5" action="{% url 'index' %}" method="get">
+<form class="text-center m-5" action="{% url 'webapp:index' %}" method="get">
     <label for="{{ form.search.id_for_label }}">{{ form.search.label }}</label>
         {{ form.search }}
     <input type="submit" value="Search">
