@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}User{% endblock %}
+
+{% block menu_links %}
+    <li><a href="#">Edit</a> </li>
+    <li><a href="#">Change password</a> </li>
+{%  endblock %}
+
+{%  block content %}
+<h1>Личный кабинет</h1>
+<p> Имя пользователя: {{ user_obj.username }}</p>
+<p>Имя: {{ user_obj.first_name }}</p>
+<p>Фамилия: {{ user_obj.last_name }}</p>
+<p>Почта: {{ user_obj.email }}</p>
+{% endblock %}
