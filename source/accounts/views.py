@@ -48,7 +48,6 @@ def register_view(request):
             )
             user.set_password(form.cleaned_data['password'])
             user.save()
-
             #токен для активации, его сложнее угадать, чем pk user
             token = Token.objects.create(user=user)
             activation_url=HOST_NAME + reverse('accounts:user_activate') + \

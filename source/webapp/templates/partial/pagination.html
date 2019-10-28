@@ -1,24 +1,34 @@
 
 <div class="pagination">
-    <span class="step-links">
-        <a href="?{% if query %}{{ query }}{% endif %}page=1">&laquo; Start</a>
-        {% if page_obj.has_previous %}
-            <a href="?{% if query %}{{ query }}{% endif %}page={{ page_obj.previous_page_number }}">Prev.</a>
-        {% else %}
-            <span class="page-disabled">Back</span>
-        {% endif %}
+    <form action="" method="GET">
 
-        <span class="current">
-            Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}.
-        </span>
+            <a href="?{% if query %}{{ query }}&{% endif %}page=1">&laquo; Start</a>
+            {% if page_obj.has_previous %}
+                <a href="?{% if query %}{{ query }}&{% endif %}page={{ page_obj.previous_page_number }}">Prev.</a>
+            {% else %}
+                <span class="page-disabled">Back</span>
+            {% endif %}
 
+             <span>
+                Page <input class="page-input" type="text" name="page" value="{{ page_obj.number }}" maxlength="5"> of {{ paginator.num_pages }}.
+            </span>
         {% if page_obj.has_next %}
-            <a href="?{% if query %}{{ query }}{% endif %}page={{ page_obj.next_page_number }}">Next</a>
+            <a href="?{% if query %}{{ query }}&{% endif %}page={{ page_obj.next_page_number }}">Next</a>
         {% else %}
-
             <span class="page-disabled">Next</span>
         {% endif %}
 
-        <a href="?{% if query %}{{ query }}{% endif %}page={{ page_obj.paginator.num_pages }}">End &raquo;</a>
-    </span>
+        <a href="?{% if query %}{{ query }}&{% endif %}page={{ page_obj.paginator.num_pages }}">End &raquo;</a>
+
+    </form>
+{#</div>#}
+    <div class="pages">
+       {% for page in paginator.page_range %}
+           {% if page_obj.number == page %}
+               <span class="page-active">{{ page }}</span>
+           {% else %}
+              <a href="?{% if query %}{{ query }}&{% endif %}page={{ page }}">{{ page }}</a>
+           {% endif %}
+       {% endfor %}
+    </div>
 </div>

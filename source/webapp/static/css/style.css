@@ -17,7 +17,7 @@ body{
 }
 h1{
     margin-top: 40px;
-    margin-left: 35%;
+    margin-left: 38%;
 }
 .btn{
     width: 130px;
@@ -30,19 +30,19 @@ h2{
     margin-left: 35%;
     font-size: 25px;
 }
-.comment-add label{
-    width: 120px;
-    height: 30px;
-    display: inline-block;
-    margin-top: 50px;
-    margin-left: 70px;
-    margin-bottom: 30px;
-    font-size: 18px;
-}
-.comment-add input {
-    font-size: 20px;
-    width: 500px;
-}
+/*.comment-add label{*/
+    /*width: 120px;*/
+    /*height: 30px;*/
+    /*display: inline-block;*/
+    /*margin-top: 50px;*/
+    /*margin-left: 70px;*/
+    /*margin-bottom: 30px;*/
+    /*font-size: 18px;*/
+/*}*/
+/*.comment-add input {*/
+    /*font-size: 20px;*/
+    /*width: 500px;*/
+/*}*/
 .submit p{
     border-radius: 3px;
     font-size: 15px;
@@ -57,41 +57,60 @@ textarea{
 .delete-info h1{
     margin-left: 10%;
 }
-.pagination a, .pagination .page-disabled {
-   display: inline-block;
-   border: solid 1px #6a7ddd;
-   border-radius: 3px;
-   padding: 5px;
-   margin: 3px;
+.pagination {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 33%;
+}
+
+.pagination a, .page-disabled, .page-active {
+    display: inline-block;
+    border: solid 1px #6a7ddd;
+    border-radius: 3px;
+    padding: 5px;
+    margin: 3px;
 }
 .pagination a {
-   background: #6a7ddd;
+    background: #6a7ddd;
     color: white;
     text-decoration: none;
 }
+
 .pagination a:hover {
    background: #6a7dff;
+   text-decoration: underline;
 }
-.pagination .page-disabled {
-   background: #6a7dcc;
-   color: #dddddd
+
+.page-disabled {
+    background: #6a7dcc;
+    color: #dddddd;
+
 }
-.pagination{
-    margin-left: 33%;
-    margin-top: 40px;
+.page-input {
+    font-size: 16px;
+    width: 50px;
+    text-align: center;
+}
+
+.page-active {
+    background: #ffc122;
 }
 .form-error {
     color: red;
-    font-size: 20px;
-    margin: 30px 0 25px 0;
-
+    font-size: 12px;
+    margin: 5px 0 0 0
 }
 
 .field-error {
     border: solid 1px red;
     box-shadow: red 0 0 3px;
 }
-.label{
+.text-center{
+    text-align: center;
+}
+.user_hello{
     font-size: 20px;
-    width: 200px;
+    font-weight: bold;
+    margin-top: 7px;
 }

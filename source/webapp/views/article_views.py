@@ -57,58 +57,71 @@ class ArticleSearchView(FormView):
     form_class = FullSearchForm
 
     def form_valid(self, form):
-        text = form.cleaned_data.get('text')
+        query = urlencode(form.cleaned_data)
+        url = reverse('webapp:search_results') + '?' + query
+        return redirect(url)
+
+
+class ResultView(ListView):
+    template_name = 'article/search.html'
+    model = Article
+    context_object_name = 'articles'
+    paginate_by = 4
+    paginate_orphans = 1
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        form = FullSearchForm(data=self.request.GET)
+        if form.is_valid():
+            query = self.get_text_query(form) | self.get_author_query(form)
+            queryset = queryset.filter(query).distinct()
+
+        return queryset
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        form = FullSearchForm(data=self.request.GET)
+        query = self.get_query_string()
+        return super().get_context_data(
+            form=form, query=query, object_list=object_list, **kwargs
+        )
+
+    def get_query_string(self):
+        data = {}
+        for key in self.request.GET:
+            if key != 'page':
+                data[key] = self.request.GET.get(key)
+        return urlencode(data)
+
+    def get_author_query(self, form):
+        query = Q()
         author = form.cleaned_data.get('author')
-        query = Q()
-        if text or author:
-            query = self.get_text_query(form, text) | self.get_author_query(form, author)
-
-        articles = Article.objects.filter(query).distinct()
-        context = self.get_context_data()
-        context['articles'] = articles
-
-        return self.render_to_response(context)
-
-        # return render(self.request, 'article/result.html', context)
-
-    def get_text_query(self, form, text):
-        query = Q()
-        in_title = form.cleaned_data.get('in_title')
-        if in_title:
-            query = query | Q(title__icontains=text)
-        in_text = form.cleaned_data.get('in_text')
-        if in_text:
-            query = query | Q(text__icontains=text)
-        in_tags = form.cleaned_data.get('in_tags')
-        if in_tags:
-            query = query | Q(tags__name__iexact=text)
-        in_comment_text = form.cleaned_data.get('in_comment_text')
-        if in_comment_text:
-            query = query | Q(comments__text__icontains=text)
-        return query
-
-
-    def get_author_query(self, form, author):
-        query = Q()
-        article_author = form.cleaned_data.get('article_author')
-        if article_author:
-            query = query | Q(author__iexact=author)
+        if author:
+            article_author = form.cleaned_data.get('article_author')
+            if article_author:
+                query = query | Q(author__iexact=author)
         comment_author = form.cleaned_data.get('comment_author')
         if comment_author:
             query = query | Q(comments__author__iexact=author)
         return query
 
 
-# class ResultView(ListView):
-#     template_name = 'article/result.html'
-#     model = Article
-#     context_object_name = 'articles'
-#     paginate_by = 4
-#     paginate_orphans = 1
-
-
-
-
+    def get_text_query(self, form):
+        query = Q()
+        text = form.cleaned_data.get('text')
+        if text:
+            in_title = form.cleaned_data.get('in_title')
+            if in_title:
+                query = query | Q(title__icontains=text)
+            in_text = form.cleaned_data.get('in_text')
+            if in_text:
+                query = query | Q(text__icontains=text)
+            in_tags = form.cleaned_data.get('in_tags')
+            if in_tags:
+                query = query | Q(tags__name__iexact=text)
+            in_comment_text = form.cleaned_data.get('in_comment_text')
+            if in_comment_text:
+                query = query | Q(comments__text__icontains=text)
+        return query
 
 
 class ArticleView(DetailView):
