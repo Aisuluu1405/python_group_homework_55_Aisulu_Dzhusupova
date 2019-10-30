@@ -24,10 +24,12 @@
             <div class="comment">
                 <p>{{ comment.author }} commented at ( {{ comment.created_at|date:'d.m.Y H:i:s' }} )</p>
                 <div class="pre">{{ comment.text }}</div>
+                {% if request.user.is_authenticated %}
                 <p class="comment-links">
                     <a href="{% url 'webapp:comment_update' comment.pk %}">Edit</a>
                     <a href="{% url 'webapp:comment_delete' comment.pk %}">Delete</a>
                 </p>
+            {% endif %}
             </div>
         {% empty %}
             <p>No comments yet.</p>
@@ -37,9 +39,9 @@
     {% if is_paginated %}
         {% include 'partial/pagination.html' %}
     {% endif %}
-    <h4><b>Add new comment:</b></h4>
-    <form action="{% url 'webapp:article_comment_add' article.pk %}" method="POST" id="add_comment">
-        {% include 'partial/form.html' with button_text='Add' %}
-    </form>
 
+    <h4><b>Add new comment:</b></h4>
+        <form action="{% url 'webapp:article_comment_add' article.pk %}" method="POST" id="add_comment">
+            {% include 'partial/form.html' with button_text='Add' %}
+        </form>
 {% endblock %}
