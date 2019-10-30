@@ -1,7 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
-from django.views.generic import DetailView
 
 
 class UserCreationForm(forms.Form):
@@ -39,6 +38,12 @@ class UserCreationForm(forms.Form):
             raise ValidationError('Password do not match!',
                                   code='password_do_not_match')
         return self.cleaned_data
+
+
+class UserChangeForm(forms.ModelForm):
+    class Meta:
+        model=User
+        fields=['first_name', 'last_name', 'email']
 
 
 

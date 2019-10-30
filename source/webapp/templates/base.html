@@ -21,25 +21,26 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link mr-4" href="{% url 'webapp:index' %}">Home</a>
+        <a class="nav-link mr-3" href="{% url 'webapp:index' %}">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link mr-4" href="{% url 'webapp:article_add' %}">Add Article</a>
+        <a class="nav-link mr-3" href="{% url 'webapp:article_add' %}">Add Article</a>
       </li>
         <li class="nav-item">
-        <a class="nav-link mr-4" href="{% url 'webapp:comment_add' %}">Add Comments</a>
+        <a class="nav-link mr-3" href="{% url 'webapp:comment_add' %}">Add Comments</a>
       </li>
        <li class="nav-item">
-        <a class="nav-link mr-4" href="{% url 'webapp:article_search' %}">Search</a>
+        <a class="nav-link mr-3" href="{% url 'webapp:article_search' %}">Search</a>
       </li>
            {% block menu %} {% endblock %}
+
             {% if request.user.is_authenticated %}
-                {% block menu_links %}{% endblock %}
-                <a class="user_hello mr-3">Hello, <a href="{% url 'accounts:detail' user.pk %}">{{ user.username }}!</a></li>
-                <li class="nav-item"><a class="nav-link mr-3" href="{% url 'accounts:logout'  %}">Log Out</a></li>
+                <li class="nav-item">
+                    <a a class="nav-link mr-4 text-success"  href="{% url 'accounts:user_detail' request.user.pk %}">Hello, {{request.user }}!</a></li>
+                <li class="nav-item "><a class="nav-link text-success" href="{% url 'accounts:logout'  %}">Log Out</a></li>
             {% else %}
-                <li class="menu-right"><a class="nav-link mr-3" href="{% url 'accounts:login'  %}">Log In</a></li>
-                <li class="menu-right"><a class="nav-link mr-3" href="{% url 'accounts:register' %}"> Register</a> </li>
+                <li class="nav-item"><a class="nav-link ml-4 text-success" href="{% url 'accounts:login'  %}">Log In</a></li>
+                <li class="nav-item"><a class="nav-link text-success" href="{% url 'accounts:register' %}"> Register</a> </li>
             {% endif %}
        </ul>
    </div>
