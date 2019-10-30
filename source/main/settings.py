@@ -130,3 +130,7 @@ EMAIL_HOST_PASSWORD = '6248630fb68432'
 EMAIL_PORT = '2525'
 
 HOST_NAME = 'localhost:8000'
+
+LOGIN_REDIRECT_URL = 'webapp:index'
+
+LOGOUT_REDIRECT_URL = 'webapp:index'
