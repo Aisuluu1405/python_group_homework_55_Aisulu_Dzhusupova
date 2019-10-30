@@ -4,8 +4,8 @@
 
 {% block menu %}
     {% if user_obj == request.user %}
-        <li><a href="{% url "accounts:user_detail" user_obj.pk %}">View</a></li>
-{#        <li><a href="{% url 'accounts:user_change_password' user_obj.pk %}">Change passworg</a></li>#}
+        <li class="nav-item "><a class="nav-link ml-3 text-success"  href="{% url "accounts:user_detail" user_obj.pk %}">View</a></li>
+        <li class="nav-item "><a class="nav-link text-success"  href="{% url 'accounts:user_change_password' user_obj.pk %}">Change passworg</a></li>
     {% endif %}
 {% endblock %}
 
