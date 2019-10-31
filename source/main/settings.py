@@ -124,13 +124,15 @@ STATIC_URL = '/static/'
 
 LOGIN_URL = 'accounts:login'
 
-EMAIL_HOST = 'smtp.mailtrap.io'
-EMAIL_HOST_USER = '8161e4bf7ada1b'
-EMAIL_HOST_PASSWORD = '6248630fb68432'
-EMAIL_PORT = '2525'
 
 HOST_NAME = 'localhost:8000'
 
 LOGIN_REDIRECT_URL = 'webapp:index'
 
 LOGOUT_REDIRECT_URL = 'webapp:index'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
+
+MEDIA_URL = '/media/'
+
+from .settings_local import *
