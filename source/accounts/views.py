@@ -7,7 +7,7 @@ from django.views.generic import DetailView, UpdateView
 
 from main.settings import HOST_NAME
 from accounts.forms import UserCreationForm, UserChangeForm, UserChangePasswordForm
-from accounts.models import Token
+from accounts.models import Token, Profile
 
 
 def register_view(request):
@@ -25,6 +25,7 @@ def register_view(request):
             )
             user.set_password(form.cleaned_data['password'])
             user.save()
+            Profile.objects.create(user=user)
             #токен для активации, его сложнее угадать, чем pk user
             token = Token.objects.create(user=user)
             activation_url=HOST_NAME + reverse('accounts:user_activate') + \
