@@ -11,7 +11,8 @@
 
 {% block content %}
     <h1>Edit profile: {{ user_obj.username }}</h1>
-    <form action="{% url "accounts:user_update" user_obj.pk %}" method="post">
+    <form action="{% url "accounts:user_update" user_obj.pk %}" method="post"
+        enctype="multipart/form-data">
         {% include 'partial/form.html' with button_text="Edit"%}
     </form>
 

@@ -11,7 +11,11 @@
 
 {%  block content %}
     <h1>Profile: {{ user_obj.username }}</h1>
+    {% if user_obj.profile.avatar %}
+        <img class="avatar" src="{{ user_obj.profile.avatar.url }}" width="='250" height="250" alt="user-pic">
+    {% endif %}
     <p> First name: <b>{{ user_obj.first_name }}</b></p>
-    <p>Last name: {{ user_obj.last_name }}</p>
-    <p>Email: {{ user_obj.email }}</p>
+    <p>Last name: <b>{{ user_obj.last_name }}</b></p>
+    <p>Date of birth<b>{{ user_obj.profile.birth_date| date:'d.m.Y' }}</b></p>
+    <p>Email: <b>{{ user_obj.email }}</b></p>
 {% endblock %}
