@@ -87,10 +87,8 @@
     "updated_at": "2019-10-17T13:23:11.835Z",
     "category": 3,
     "tags": [
-      29,
       30,
-      31,
-      32
+      31
     ]
   }
 },
@@ -108,6 +106,112 @@
       38,
       39,
       40
+    ]
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 59,
+  "fields": {
+    "title": "Title",
+    "text": "Me",
+    "author": "Unknown",
+    "created_at": "2019-10-21T04:12:59.688Z",
+    "updated_at": "2019-10-21T04:12:59.688Z",
+    "category": 5,
+    "tags": []
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 60,
+  "fields": {
+    "title": "Title2",
+    "text": "You",
+    "author": "Unknown",
+    "created_at": "2019-10-21T04:13:22.941Z",
+    "updated_at": "2019-10-21T04:13:22.941Z",
+    "category": 5,
+    "tags": []
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 61,
+  "fields": {
+    "title": "Title3",
+    "text": "We",
+    "author": "Unknown",
+    "created_at": "2019-10-21T04:13:44.532Z",
+    "updated_at": "2019-10-21T04:13:44.532Z",
+    "category": 5,
+    "tags": []
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 62,
+  "fields": {
+    "title": "Title4",
+    "text": "You",
+    "author": "Unknown",
+    "created_at": "2019-10-21T04:14:07.281Z",
+    "updated_at": "2019-10-21T04:14:07.281Z",
+    "category": 4,
+    "tags": []
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 63,
+  "fields": {
+    "title": "Title5",
+    "text": "He",
+    "author": "Unknown",
+    "created_at": "2019-10-21T04:15:21.763Z",
+    "updated_at": "2019-10-21T04:15:21.763Z",
+    "category": 5,
+    "tags": []
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 64,
+  "fields": {
+    "title": "Title6",
+    "text": "She",
+    "author": "Unknown",
+    "created_at": "2019-10-21T04:15:42.144Z",
+    "updated_at": "2019-10-21T04:15:42.144Z",
+    "category": 5,
+    "tags": []
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 65,
+  "fields": {
+    "title": "Test",
+    "text": "test",
+    "author": "Unknown",
+    "created_at": "2019-10-27T03:05:33.533Z",
+    "updated_at": "2019-10-27T03:05:33.533Z",
+    "category": 4,
+    "tags": []
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 66,
+  "fields": {
+    "title": "Test88",
+    "text": "gfddddff",
+    "author": "Unknown",
+    "created_at": "2019-10-27T19:32:49.056Z",
+    "updated_at": "2019-10-27T19:32:49.056Z",
+    "category": 2,
+    "tags": [
+      28
     ]
   }
 },
@@ -153,6 +257,50 @@
     "author": "Anonymous",
     "created_at": "2019-10-16T03:31:22.643Z",
     "updated_at": "2019-10-16T03:31:22.643Z"
+  }
+},
+{
+  "model": "webapp.comment",
+  "pk": 6,
+  "fields": {
+    "article": 63,
+    "text": "hjjhggf",
+    "author": "Anonymous",
+    "created_at": "2019-10-21T09:37:46.307Z",
+    "updated_at": "2019-10-21T09:37:46.307Z"
+  }
+},
+{
+  "model": "webapp.comment",
+  "pk": 7,
+  "fields": {
+    "article": 2,
+    "text": "Hello",
+    "author": "Aisl",
+    "created_at": "2019-10-21T09:39:20.749Z",
+    "updated_at": "2019-10-21T09:39:20.749Z"
+  }
+},
+{
+  "model": "webapp.comment",
+  "pk": 8,
+  "fields": {
+    "article": 64,
+    "text": "by",
+    "author": "Aisl",
+    "created_at": "2019-10-21T09:39:47.286Z",
+    "updated_at": "2019-10-21T09:39:47.286Z"
+  }
+},
+{
+  "model": "webapp.comment",
+  "pk": 9,
+  "fields": {
+    "article": 65,
+    "text": "huuyteewsxcvn",
+    "author": "Anonymous",
+    "created_at": "2019-10-27T03:05:48.217Z",
+    "updated_at": "2019-10-27T03:05:48.217Z"
   }
 },
 {
@@ -232,14 +380,6 @@
 },
 {
   "model": "webapp.tag",
-  "pk": 29,
-  "fields": {
-    "name": "test2",
-    "created_at": "2019-10-17T13:00:46.444Z"
-  }
-},
-{
-  "model": "webapp.tag",
   "pk": 30,
   "fields": {
     "name": "book2",
@@ -252,14 +392,6 @@
   "fields": {
     "name": "world",
     "created_at": "2019-10-17T13:00:47.538Z"
-  }
-},
-{
-  "model": "webapp.tag",
-  "pk": 32,
-  "fields": {
-    "name": "test",
-    "created_at": "2019-10-17T13:00:48.298Z"
   }
 },
 {
@@ -331,7 +463,7 @@
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$150000$58vR3nllHzq6$uawiUsXkrhsrGWQL7Ao8zcde+wa3RRCeuoNY+evGBIM=",
-    "last_login": "2019-10-15T07:16:22.873Z",
+    "last_login": "2019-10-31T13:52:34Z",
     "is_superuser": true,
     "username": "admin",
     "first_name": "",
@@ -339,7 +471,151 @@
     "email": "",
     "is_staff": true,
     "is_active": true,
-    "date_joined": "2019-10-15T07:02:32.613Z",
+    "date_joined": "2019-10-15T07:02:32Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$pq2zbxk5dbi1$nMTLzxJzg4x1dZsXxtHtEfJMrSHyS1vIeuLs8DWUQeQ=",
+    "last_login": "2019-10-24T14:06:34.888Z",
+    "is_superuser": false,
+    "username": "user_2",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2019-10-24T14:06:33.950Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$DAnVQWRpU30R$XE1iGsr98V9cuT4VeJ53j3ITdKzLUJpBkXQrOqoeGi4=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "Aisl6989",
+    "first_name": "",
+    "last_name": "",
+    "email": "ahhhshh@localhost.com",
+    "is_staff": false,
+    "is_active": false,
+    "date_joined": "2019-10-27T05:11:38.589Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$56sd94OEWPfd$pBomhgfeHMopQflwrG63jeTdf7p/I3ebYGrXmFGE4qc=",
+    "last_login": "2019-10-27T13:15:49.135Z",
+    "is_superuser": false,
+    "username": "user_25",
+    "first_name": "",
+    "last_name": "",
+    "email": "test@test.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2019-10-27T13:14:47.382Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 5,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$D0ai9ghmpecf$otpRuT7AfI9SGzEDpNt2bLtWcdLYfu9qPvnLOxnI18I=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "Aisl_1980",
+    "first_name": "",
+    "last_name": "",
+    "email": "aisuluueco2009@yandex.ru",
+    "is_staff": false,
+    "is_active": false,
+    "date_joined": "2019-10-28T14:11:26.376Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 6,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$qdVQAcqk2ekp$VPgmZAESZN7VgIkavEacksnsRy/b8QOGr/wD98Rsq4g=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "User_20",
+    "first_name": "",
+    "last_name": "",
+    "email": "gghdhsgg@gmail.com",
+    "is_staff": false,
+    "is_active": false,
+    "date_joined": "2019-10-28T14:12:47.749Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 7,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$3WllMX8sPBTK$8dISJ5tFmlrPjai+B4w64gosVFxyHaVP4AQSxfKGiLU=",
+    "last_login": "2019-11-02T03:51:22.253Z",
+    "is_superuser": false,
+    "username": "Aisuluu_10",
+    "first_name": "Aisulu",
+    "last_name": "Djusupova",
+    "email": "aisuluueco2009@gmail.ru",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2019-10-28T14:28:43.349Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 8,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$fHH03ipDUpvn$uTInqr/hYytkLh1x9KrAAA8pbUXZqQlDPDpdC6ZNFc0=",
+    "last_login": "2019-10-30T12:02:08.487Z",
+    "is_superuser": false,
+    "username": "Nadina",
+    "first_name": "Nadina",
+    "last_name": "Sanjarbek",
+    "email": "nadina@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2019-10-30T10:07:43.713Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 9,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$lrCb4dKr3zuQ$JyZ2cRGG4H1orRMEQchfOD1cFtoESiwI7g8AyBs/yx0=",
+    "last_login": "2019-11-02T09:04:19.354Z",
+    "is_superuser": false,
+    "username": "aidinboy",
+    "first_name": "",
+    "last_name": "",
+    "email": "aidin@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2019-11-02T09:02:46.633Z",
     "groups": [],
     "user_permissions": []
   }
