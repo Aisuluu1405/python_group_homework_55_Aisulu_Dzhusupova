@@ -155,11 +155,43 @@
   }
 },
 {
+  "model": "webapp.tag",
+  "pk": 74,
+  "fields": {
+    "name": "test2",
+    "created_at": "2019-11-04T14:39:51.160Z"
+  }
+},
+{
+  "model": "webapp.tag",
+  "pk": 75,
+  "fields": {
+    "name": "Asia",
+    "created_at": "2019-11-05T07:11:18.119Z"
+  }
+},
+{
+  "model": "webapp.tag",
+  "pk": 76,
+  "fields": {
+    "name": "Food",
+    "created_at": "2019-11-05T07:13:11.758Z"
+  }
+},
+{
+  "model": "webapp.tag",
+  "pk": 77,
+  "fields": {
+    "name": "Tennis",
+    "created_at": "2019-11-05T07:15:41.094Z"
+  }
+},
+{
   "model": "auth.user",
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$150000$58vR3nllHzq6$uawiUsXkrhsrGWQL7Ao8zcde+wa3RRCeuoNY+evGBIM=",
-    "last_login": "2019-10-31T13:52:34Z",
+    "last_login": "2019-11-05T07:08:36.386Z",
     "is_superuser": true,
     "username": "admin",
     "first_name": "",
@@ -285,7 +317,7 @@
   "pk": 8,
   "fields": {
     "password": "pbkdf2_sha256$150000$fHH03ipDUpvn$uTInqr/hYytkLh1x9KrAAA8pbUXZqQlDPDpdC6ZNFc0=",
-    "last_login": "2019-10-30T12:02:08.487Z",
+    "last_login": "2019-11-05T07:13:54.177Z",
     "is_superuser": false,
     "username": "Nadina",
     "first_name": "Nadina",
@@ -312,6 +344,24 @@
     "is_staff": false,
     "is_active": true,
     "date_joined": "2019-11-02T09:02:46.633Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 10,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$fgNsJafBA4gY$nPYLgv/nMzsr/zg3EviYHqI+I+C81lcFdvMC+BFpPAM=",
+    "last_login": "2019-11-05T07:09:45.759Z",
+    "is_superuser": false,
+    "username": "Aidin",
+    "first_name": "",
+    "last_name": "",
+    "email": "aidin09@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2019-11-05T06:42:07.327Z",
     "groups": [],
     "user_permissions": []
   }
@@ -362,17 +412,6 @@
 },
 {
   "model": "webapp.comment",
-  "pk": 6,
-  "fields": {
-    "article": 63,
-    "text": "hjjhggf",
-    "author": null,
-    "created_at": "2019-10-21T09:37:46.307Z",
-    "updated_at": "2019-10-21T09:37:46.307Z"
-  }
-},
-{
-  "model": "webapp.comment",
   "pk": 7,
   "fields": {
     "article": 2,
@@ -384,24 +423,46 @@
 },
 {
   "model": "webapp.comment",
-  "pk": 8,
+  "pk": 16,
   "fields": {
-    "article": 64,
-    "text": "by",
-    "author": null,
-    "created_at": "2019-10-21T09:39:47.286Z",
-    "updated_at": "2019-10-21T09:39:47.286Z"
+    "article": 71,
+    "text": "China (((",
+    "author": 10,
+    "created_at": "2019-11-05T07:11:44.178Z",
+    "updated_at": "2019-11-05T07:11:44.178Z"
   }
 },
 {
   "model": "webapp.comment",
-  "pk": 9,
+  "pk": 17,
   "fields": {
-    "article": 65,
-    "text": "huuyteewsxcvn",
-    "author": null,
-    "created_at": "2019-10-27T03:05:48.217Z",
-    "updated_at": "2019-10-27T03:05:48.217Z"
+    "article": 72,
+    "text": "Hello!",
+    "author": 10,
+    "created_at": "2019-11-05T07:13:37.108Z",
+    "updated_at": "2019-11-05T07:13:37.108Z"
+  }
+},
+{
+  "model": "webapp.comment",
+  "pk": 18,
+  "fields": {
+    "article": 73,
+    "text": "It`s amazing!",
+    "author": 8,
+    "created_at": "2019-11-05T07:15:56.352Z",
+    "updated_at": "2019-11-05T07:15:56.352Z"
+  }
+},
+{
+  "model": "webapp.comment",
+  "pk": 19,
+  "fields": {
+    "article": 72,
+    "text": "\u041a\u043e\u043c\u043c\u0435\u043d\u0442\u0430\u0440\u0438\u0438 \u043c\u043e\u0433\u0443\u0442 \u043e\u0441\u0442\u0430\u0432\u043b\u044f\u0442\u044c \u043b\u044e\u0431\u044b\u0435 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u0438, \u043a\u043e\u0442\u043e\u0440\u044b\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d\u044b.",
+    "author": 8,
+    "created_at": "2019-11-05T07:22:04.722Z",
+    "updated_at": "2019-11-05T07:22:04.722Z"
   }
 },
 {
@@ -514,107 +575,46 @@
 },
 {
   "model": "webapp.article",
-  "pk": 59,
+  "pk": 71,
   "fields": {
-    "title": "Title",
-    "text": "Me",
-    "author": 1,
-    "created_at": "2019-10-21T04:12:59.688Z",
-    "updated_at": "2019-10-21T04:12:59.688Z",
-    "category": 5,
-    "tags": []
+    "title": "Hong Kong: Xi expresses 'high degree of confidence' in Lam",
+    "text": "China's President Xi Jinping has told embattled Hong Kong leader Carrie Lam that the central government has a \"high degree of confidence\" in her, according to Chinese state media.\r\nThere were reports last week of Beijing planning to replace Ms Lam, after months of anti-government protests that have at times crippled Hong Kong.\r\nBut Mr Xi reportedly expressed his full support at a meeting in Shanghai.\r\nThe protests began against an extradition bill put forward by Ms Lam.\r\nShe championed the proposed law, which would have allowed criminal suspects in Hong Kong to be sent to mainland China for trial.\r\nThe bill sparked fears Hong Kong's freedoms were being eroded, and led to widespread protests, including one with a reported turnout of close to two million.\r\nMs Lam eventually withdrew the bill, but protests have continued, with activists demanding an independent inquiry into alleged police brutality, and democratic reform.\r\nChina's state news agency Xinhua published pictures of the two leaders shaking hands, and reported that Mr Xi had praised Ms Lam for her efforts to quell clashes in the territory.\r\n\"The central government has a high degree of confidence in you,\" he was quoted as saying, adding: \"Stopping the storm and restoring order remains the most important task in Hong Kong.\"",
+    "author": 10,
+    "created_at": "2019-11-05T07:11:17.529Z",
+    "updated_at": "2019-11-05T07:11:17.529Z",
+    "category": 1,
+    "tags": [
+      75
+    ]
   }
 },
 {
   "model": "webapp.article",
-  "pk": 60,
+  "pk": 72,
   "fields": {
-    "title": "Title2",
-    "text": "You",
-    "author": 1,
-    "created_at": "2019-10-21T04:13:22.941Z",
-    "updated_at": "2019-10-21T04:13:22.941Z",
-    "category": 5,
-    "tags": []
-  }
-},
-{
-  "model": "webapp.article",
-  "pk": 61,
-  "fields": {
-    "title": "Title3",
-    "text": "We",
-    "author": 1,
-    "created_at": "2019-10-21T04:13:44.532Z",
-    "updated_at": "2019-10-21T04:13:44.532Z",
-    "category": 5,
-    "tags": []
-  }
-},
-{
-  "model": "webapp.article",
-  "pk": 62,
-  "fields": {
-    "title": "Title4",
-    "text": "You",
-    "author": 1,
-    "created_at": "2019-10-21T04:14:07.281Z",
-    "updated_at": "2019-10-21T04:14:07.281Z",
-    "category": 4,
-    "tags": []
-  }
-},
-{
-  "model": "webapp.article",
-  "pk": 63,
-  "fields": {
-    "title": "Title5",
-    "text": "He",
-    "author": 1,
-    "created_at": "2019-10-21T04:15:21.763Z",
-    "updated_at": "2019-10-21T04:15:21.763Z",
-    "category": 5,
-    "tags": []
-  }
-},
-{
-  "model": "webapp.article",
-  "pk": 64,
-  "fields": {
-    "title": "Title6",
-    "text": "She",
-    "author": 1,
-    "created_at": "2019-10-21T04:15:42.144Z",
-    "updated_at": "2019-10-21T04:15:42.144Z",
-    "category": 5,
-    "tags": []
-  }
-},
-{
-  "model": "webapp.article",
-  "pk": 65,
-  "fields": {
-    "title": "Test",
-    "text": "test",
-    "author": 1,
-    "created_at": "2019-10-27T03:05:33.533Z",
-    "updated_at": "2019-10-27T03:05:33.533Z",
-    "category": 4,
-    "tags": []
-  }
-},
-{
-  "model": "webapp.article",
-  "pk": 66,
-  "fields": {
-    "title": "Test88",
-    "text": "gfddddff",
-    "author": 1,
-    "created_at": "2019-10-27T19:32:49.056Z",
-    "updated_at": "2019-10-27T19:32:49.056Z",
+    "title": "McDonald's boss Steve Easterbrook fired after dating employee",
+    "text": "McDonald's has fired its chief executive Steve Easterbrook after he had a relationship with an employee.\r\nThe US fast food giant said the relationship was consensual, but Mr Easterbrook had \"violated company policy\" and shown \"poor judgement\".\r\nThe British businessman, who earned nearly $16m (\u00a312.3m) last year, is due to receive 26 weeks of pay.\r\nThe full value of the deal was not clear. He is also eligible for a bonus, if the firm hits its performance goals.\r\nBloomberg estimated that he will leave with more than $37m, the bulk of which includes previously granted shares.\r\nIn exchange, Mr Easterbrook has agreed not to work for a competitor for at least two years.",
+    "author": 10,
+    "created_at": "2019-11-05T07:13:11.242Z",
+    "updated_at": "2019-11-05T07:13:11.242Z",
     "category": 2,
     "tags": [
-      28
+      76
+    ]
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 73,
+  "fields": {
+    "title": "Sir Andy Murray and wife Kim celebrate birth of third child",
+    "text": "Sir Andy Murray's wife Kim has given birth to their third child, a boy.\r\nThe baby, described by his grandmother Judy Murray as a \"lovely, happy, healthy baby boy\", was born last week in London, where the family live.\r\nSir Andy and Kim, both aged 32, married in the tennis star's hometown of Dunblane in 2015.\r\nThey already have two daughters, Sophia, who was born in 2016, and Edie, born in 2017.\r\nSpeaking on BBC Scotland's Mornings with Kaye Adams programme, Sir Andy's mother Judy said: \"It's lovely news, lovely to have a little boy to go with the two little girls.\"\r\nShe said baby was born \"a few days ago\" and added: \"I'll leave it to Andy and Kim to fill in all the details.\"",
+    "author": 8,
+    "created_at": "2019-11-05T07:15:40.524Z",
+    "updated_at": "2019-11-05T07:15:40.525Z",
+    "category": 3,
+    "tags": [
+      77
     ]
   }
 }

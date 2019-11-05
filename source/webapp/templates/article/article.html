@@ -23,8 +23,9 @@
     <div class="comment-list">
         {% for comment in comments %}
             <div class="comment">
-                <p>{{ comment.author }} commented at ( {{ comment.created_at|date:'d.m.Y H:i:s' }} )</p>
+                <p class="text-danger mt-4">{{ comment.author }} commented at ( {{ comment.created_at|date:'d.m.Y H:i:s' }} )</p>
                 <div class="pre">{{ comment.text }}</div>
+                <hr>
 
             {% if article.author == request.user or request.user.is_superuser %}
                 <p class="comment-links">
@@ -41,10 +42,11 @@
     {% if is_paginated %}
         {% include 'partial/pagination.html' %}
     {% endif %}
-    {% if article.author == request.user or request.user.is_superuser %}
+    {% if request.user.is_authenticated %}
     <h4><b>Add new comment:</b></h4>
         <form action="{% url 'webapp:article_comment_add' article.pk %}" method="POST" id="add_comment">
             {% include 'partial/form.html' with button_text='Add' %}
         </form>
     {% endif %}
+
 {% endblock %}
