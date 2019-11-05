@@ -9,7 +9,7 @@ class ArticleForm(forms.ModelForm):
 
     class Meta:
         model = Article
-        exclude = ['created_at', 'updated_at', 'tags']
+        exclude = ['created_at', 'updated_at', 'tags', 'author']
 
     def clean_tags(self):
         tags = self.cleaned_data['tags']
@@ -21,13 +21,13 @@ class ArticleForm(forms.ModelForm):
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
-        exclude = ['created_at', 'updated_at']
+        exclude = ['created_at', 'updated_at', 'author']
 
 
 class ArticleCommentForm(forms.ModelForm):
     class Meta:
         model = Comment
-        fields = ['author', 'text']
+        fields = ['text']
 
 
 class SimpleSearchForm(forms.Form):

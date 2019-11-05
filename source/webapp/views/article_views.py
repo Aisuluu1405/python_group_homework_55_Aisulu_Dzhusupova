@@ -2,6 +2,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.paginator import Paginator
 from django.db.models import Q
 # from django.http import request
+from django.http import HttpResponseRedirect
 from django.shortcuts import redirect, render, get_object_or_404
 from django.urls import reverse, reverse_lazy
 from django.utils.http import urlencode
@@ -146,16 +147,19 @@ class ArticleView(DetailView):
         context['is_paginated'] = page.has_other_pages()
 
 
-
 class ArticleCreateView(LoginRequiredMixin, CreateView):
     model = Article
     template_name = 'article/create.html'
     form_class = ArticleForm
 
+
     def form_valid(self, form):
-        self.object = form.save()
+        self.object = form.save(commit=False)
+        self.object.author = self.request.user
+        self.object.save()
         self.create_tag()
-        return redirect(self.get_success_url())
+        return HttpResponseRedirect(self.get_success_url())
+
 
     def create_tag(self):
         tags = self.request.POST.get('tags').split(',')

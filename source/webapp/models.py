@@ -1,10 +1,16 @@
+from django.contrib.auth.models import User
 from django.db import models
+
+
+def get_admin():
+    return User.objects.get(username='admin').id
 
 
 class Article(models.Model):
     title = models.CharField(max_length=200, null=False, blank=False, verbose_name='Title')
     text = models.TextField(max_length=3000, null=False, blank=False, verbose_name='Text')
-    author = models.CharField(max_length=40, null=False, blank=False, default='Unknown', verbose_name='Author')
+    author = models.ForeignKey(User, on_delete=models.PROTECT, related_name='articles', null=False, blank=False,
+                               default=get_admin, verbose_name='Author')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Date of creation')
     updated_at = models.DateTimeField(auto_now=True, verbose_name='Change time')
     category = models.ForeignKey('Category', on_delete=models.PROTECT, null=True, blank=True, verbose_name='Category',
@@ -19,7 +25,7 @@ class Comment(models.Model):
     article = models.ForeignKey('webapp.Article', related_name='comments',
                                 on_delete=models.CASCADE, verbose_name='Article')
     text = models.TextField(max_length=400, verbose_name='Comment')
-    author = models.CharField(max_length=40, null=True, blank=True, default='Anonymous', verbose_name='Author')
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='comments',null=True, blank=True, default=None, verbose_name='Author')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Date of creation')
     updated_at = models.DateTimeField(auto_now=True, verbose_name='Change time')
 

@@ -16,20 +16,39 @@ class CommentIndexView(ListView):
 
 
 class CommentForArticleCreateView(LoginRequiredMixin, CreateView):
+    model = Comment
     template_name = 'comments/create.html'
     form_class = ArticleCommentForm
 
+    def dispatch(self, request, *args, **kwargs):
+        self.article = self.get_article()
+        return super().dispatch(request, *args, **kwargs)
+
+    # def form_valid(self, form):
+    #     form.instance.article = self.article
+    #     form.instance.author = self.request.user
+    #     return super().form_valid(form)
+
     def form_valid(self, form):
+        self.article.comments.create(
+            author=self.request.user,
+            **form.cleaned_data
+        )
+        return redirect('webapp:article_view', pk=self.article.pk)
+
+    def get_article(self):
         article_pk = self.kwargs.get('pk')
-        article = get_object_or_404(Article, pk=article_pk)
-        article.comments.create(**form.cleaned_data)
-        return redirect('webapp:article_view', pk=article_pk)
+        return get_object_or_404(Article, pk=article_pk)
 
 
 class CommentCreateView(LoginRequiredMixin, CreateView):
     model = Comment
     template_name = 'comments/create.html'
     form_class = CommentForm
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
 
     def get_success_url(self):
         return reverse('webapp:comment_index')
