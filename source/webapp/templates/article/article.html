@@ -7,11 +7,12 @@
   <h5 class="card-header pt-5 font-weight-bold">{{ article.title }}</h5>
   <div class="card-body">
       <p class="card-text pre">{{ article.text }}</p>
+      {% if article.author == request.user or request.user.is_superuser %}
       <p>
         <a href="{% url 'webapp:article_update' article.pk %}" class="btn btn-outline-dark m-5">Edit</a>
         <a href="{% url 'webapp:article_delete' article.pk %}" class="btn btn-outline-dark  m-5">Delete</a>
-          <a href="#add_comment" class="btn btn-outline-dark w-25 m-5">Add comment</a>
       </p>
+      {% endif %}
   </div>
 </div>
     <hr>
@@ -24,7 +25,8 @@
             <div class="comment">
                 <p>{{ comment.author }} commented at ( {{ comment.created_at|date:'d.m.Y H:i:s' }} )</p>
                 <div class="pre">{{ comment.text }}</div>
-                {% if request.user.is_authenticated %}
+
+            {% if article.author == request.user or request.user.is_superuser %}
                 <p class="comment-links">
                     <a href="{% url 'webapp:comment_update' comment.pk %}">Edit</a>
                     <a href="{% url 'webapp:comment_delete' comment.pk %}">Delete</a>
@@ -39,9 +41,10 @@
     {% if is_paginated %}
         {% include 'partial/pagination.html' %}
     {% endif %}
-
+    {% if article.author == request.user or request.user.is_superuser %}
     <h4><b>Add new comment:</b></h4>
         <form action="{% url 'webapp:article_comment_add' article.pk %}" method="POST" id="add_comment">
             {% include 'partial/form.html' with button_text='Add' %}
         </form>
+    {% endif %}
 {% endblock %}

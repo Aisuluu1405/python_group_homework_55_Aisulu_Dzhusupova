@@ -1,4 +1,4 @@
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.shortcuts import  get_object_or_404, redirect
 from django.urls import reverse
 from django.views.generic import ListView, DeleteView, UpdateView, CreateView
@@ -54,21 +54,29 @@ class CommentCreateView(LoginRequiredMixin, CreateView):
         return reverse('webapp:comment_index')
 
 
-class CommentEditView(LoginRequiredMixin, UpdateView):
+class CommentEditView(UserPassesTestMixin, UpdateView):
     model = Comment
     template_name = 'comments/update.html'
     form_class = CommentForm
     context_object_name = 'comment'
 
+    def test_func(self):
+        comment = self.get_object()
+        return self.request.user == comment.author or self.request.user.is_superuser
+
     def get_success_url(self):
-        return reverse('webapp:article_view')
+        return reverse('webapp:article_view', kwargs={'pk': self.object.article.pk})
 
 
-class CommentDeleteView(LoginRequiredMixin, DeleteView):
+class CommentDeleteView(UserPassesTestMixin, DeleteView):
     model = Comment
+
+    def test_func(self):
+        comment = self.get_object()
+        return self.request.user == comment.author or self.request.user.is_superuser
 
     def get(self, request, *args, **kwargs):
         return self.delete(request, *args, **kwargs)
 
     def get_success_url(self):
-        return reverse('webapp:comment_index')
+        return reverse('webapp:article_view', kwargs={'pk': self.object.article.pk})

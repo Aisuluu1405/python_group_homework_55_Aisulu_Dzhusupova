@@ -1,4 +1,4 @@
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.core.paginator import Paginator
 from django.db.models import Q
 # from django.http import request
@@ -171,11 +171,15 @@ class ArticleCreateView(LoginRequiredMixin, CreateView):
         return reverse('webapp:article_view', kwargs={'pk': self.object.pk})
 
 
-class ArticleEditView(LoginRequiredMixin, UpdateView):
+class ArticleEditView(UserPassesTestMixin, UpdateView):
     model = Article
     template_name = 'article/update.html'
     form_class = ArticleForm
     context_object_name = 'article'
+
+    def test_func(self):
+        article = self.get_object()
+        return self.request.user == article.author or self.request.user.is_superuser
 
     def get(self, request, *args, **kwargs):
         article = get_object_or_404(Article, pk=self.kwargs['pk'])
@@ -206,9 +210,13 @@ class ArticleEditView(LoginRequiredMixin, UpdateView):
         return reverse('webapp:article_view', kwargs={'pk': self.object.pk})
 
 
-class ArticleDeleteView(LoginRequiredMixin, DeleteView):
+class ArticleDeleteView(UserPassesTestMixin, DeleteView):
     template_name = 'article/delete.html'
     model = Article
     context_object_name = 'article'
     success_url = reverse_lazy('webapp:index')
+
+    def test_func(self):
+        article = self.get_object()
+        return self.request.user == article.author or self.request.user.is_superuser
 
